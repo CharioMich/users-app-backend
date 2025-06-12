@@ -50,7 +50,7 @@ describe("Requests for /api/users", () => {
     const res = await request(app)
       .post('/api/users')
       .set('Authorization', `Bearer ${token}`)
-      .send({   // to body tou POST
+      .send({   // POST body
         'username': 'test5',
         'username': 'sur5',
         'password': '12345',
@@ -137,7 +137,7 @@ describe("Requests for /api/users/:username", () => {
   let token;
 
   beforeAll(() => {
-    user = {                  // Ftiaxnoume emeis me to xeri enan user gia to teting. Gia na parei access token
+    user = {                  // Manually create a testing user to get the access token 
       username: "admin",
       email: "admin@aueb.gr",
       roles: ["EDITOR", "READER", "ADMIN"]
